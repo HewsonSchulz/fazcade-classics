@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://8dk13aq2d071"]
+
+[ext_resource type="Script" path="res://scripts/esc_quit.gd" id="1_7kheo"]
+[ext_resource type="Texture2D" uid="uid://bcmteik2704rd" path="res://assets/sprites/Give Gifts map.webp" id="1_ylcfl"]
+[ext_resource type="Texture2D" uid="uid://dul4lanluoku5" path="res://assets/sprites/Give Gifts border.png" id="2_cy0bm"]
+[ext_resource type="PackedScene" uid="uid://cjtnb5xjq3tx1" path="res://scenes/puppet.tscn" id="3_waf3e"]
+
+[node name="GiveGifts" type="Node2D"]
+script = ExtResource("1_7kheo")
+
+[node name="Background1" type="Sprite2D" parent="."]
+scale = Vector2(12, 6.522)
+texture = ExtResource("1_ylcfl")
+region_enabled = true
+region_rect = Rect2(208, 406, 131, 115)
+
+[node name="Background2" type="Sprite2D" parent="."]
+texture = ExtResource("2_cy0bm")
+
+[node name="!Map" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_ylcfl")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(2.8, 2.8)
+
+[node name="Puppet" parent="." instance=ExtResource("3_waf3e")]
+position = Vector2(7, 78)

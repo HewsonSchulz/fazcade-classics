@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjtnb5xjq3tx1"]
+
+[ext_resource type="Script" path="res://scripts/puppet.gd" id="1_ton16"]
+[ext_resource type="Texture2D" uid="uid://cxtdnr3cdi4jk" path="res://assets/sprites/Give Gifts Give Life.png" id="1_y621n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwf0g"]
+atlas = ExtResource("1_y621n")
+region = Rect2(1, 1, 118, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lg8xu"]
+atlas = ExtResource("1_y621n")
+region = Rect2(120, 1, 118, 189)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jp12f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwf0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lg8xu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_henuc"]
+size = Vector2(118, 190)
+
+[node name="Puppet" type="CharacterBody2D"]
+script = ExtResource("1_ton16")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jp12f")
+frame_progress = 0.505116
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_henuc")
