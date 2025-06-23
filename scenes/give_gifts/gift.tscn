@@ -8,12 +8,9 @@ shader = ExtResource("1_ijvhg")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/tolerance = 0.0
 
-[node name="Gift" type="Node2D"]
+[node name="Gift" type="Sprite2D"]
 material = SubResource("ShaderMaterial_1ol2x")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-use_parent_material = true
-scale = Vector2(0.983871, 0.983871)
+scale = Vector2(0.984, 0.984)
 texture = ExtResource("2_62kv2")
 region_enabled = true
 region_rect = Rect2(1, 328, 124, 124)
