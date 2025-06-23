@@ -5,6 +5,8 @@ const STEP_SIZE: int = 16
 var move_timer := 0.0
 var ready_to_move := true
 
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 func _ready():
 	global_position = global_position.snapped(Vector2(STEP_SIZE, STEP_SIZE))
 
@@ -28,3 +30,9 @@ func _physics_process(delta):
 			global_position += input_vector * STEP_SIZE
 			move_timer = get_move_delay()
 			ready_to_move = false
+
+			# face current direction
+			if input_vector.x > 0:
+				sprite.frame = 0
+			elif input_vector.x < 0:
+				sprite.frame = 1
