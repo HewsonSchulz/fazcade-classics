@@ -1,11 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://8dk13aq2d071"]
+[gd_scene load_steps=14 format=3 uid="uid://8dk13aq2d071"]
 
 [ext_resource type="Script" uid="uid://by1kwct7cfaty" path="res://scripts/esc_quit.gd" id="1_7kheo"]
 [ext_resource type="Texture2D" uid="uid://bcmteik2704rd" path="res://assets/sprites/Give Gifts map.webp" id="1_ylcfl"]
 [ext_resource type="Texture2D" uid="uid://dul4lanluoku5" path="res://assets/sprites/Give Gifts border.png" id="2_cy0bm"]
 [ext_resource type="PackedScene" uid="uid://cjtnb5xjq3tx1" path="res://scenes/give_gifts/puppet.tscn" id="3_waf3e"]
+[ext_resource type="Shader" uid="uid://lhght7q7kecy" path="res://shaders/chroma_key_text.gdshader" id="4_fvgxj"]
+[ext_resource type="Texture2D" uid="uid://cxtdnr3cdi4jk" path="res://assets/sprites/Give Gifts Give Life.png" id="4_n3idn"]
 [ext_resource type="PackedScene" uid="uid://gwj5q6csovly" path="res://scenes/give_gifts/child.tscn" id="5_gusev"]
 [ext_resource type="PackedScene" uid="uid://c6cr1jfygi1cb" path="res://scenes/give_gifts/gift.tscn" id="6_gkwx7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n3idn"]
+shader = ExtResource("4_fvgxj")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqwmq"]
 size = Vector2(886, 26)
@@ -37,6 +42,14 @@ texture = ExtResource("1_ylcfl")
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(2.8, 2.8)
+
+[node name="Title" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_n3idn")
+position = Vector2(177.227, -324)
+scale = Vector2(0.975292, 0.982605)
+texture = ExtResource("4_n3idn")
+region_enabled = true
+region_rect = Rect2(1, 453, 596, 88)
 
 [node name="Boundary" type="StaticBody2D" parent="."]
 
