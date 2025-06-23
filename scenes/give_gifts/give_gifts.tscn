@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://8dk13aq2d071"]
+[gd_scene load_steps=10 format=3 uid="uid://8dk13aq2d071"]
 
 [ext_resource type="Script" path="res://scripts/esc_quit.gd" id="1_7kheo"]
 [ext_resource type="Texture2D" uid="uid://bcmteik2704rd" path="res://assets/sprites/Give Gifts map.webp" id="1_ylcfl"]
 [ext_resource type="Texture2D" uid="uid://dul4lanluoku5" path="res://assets/sprites/Give Gifts border.png" id="2_cy0bm"]
-[ext_resource type="PackedScene" uid="uid://cjtnb5xjq3tx1" path="res://scenes/puppet.tscn" id="3_waf3e"]
+[ext_resource type="PackedScene" uid="uid://cjtnb5xjq3tx1" path="res://scenes/give_gifts/puppet.tscn" id="3_waf3e"]
+[ext_resource type="PackedScene" uid="uid://gwj5q6csovly" path="res://scenes/give_gifts/child.tscn" id="5_gusev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqwmq"]
 size = Vector2(886, 26)
@@ -39,20 +40,32 @@ zoom = Vector2(2.8, 2.8)
 [node name="Puppet" parent="." instance=ExtResource("3_waf3e")]
 position = Vector2(7, 78)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Child" parent="." instance=ExtResource("5_gusev")]
+position = Vector2(-277, -142)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Child2" parent="." instance=ExtResource("5_gusev")]
+position = Vector2(310, -142)
+
+[node name="Child3" parent="." instance=ExtResource("5_gusev")]
+position = Vector2(311, 233)
+
+[node name="Child4" parent="." instance=ExtResource("5_gusev")]
+position = Vector2(-301, 245)
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
 position = Vector2(5, 333)
 shape = SubResource("RectangleShape2D_eqwmq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundary"]
 position = Vector2(5, -266.5)
 shape = SubResource("RectangleShape2D_3atss")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundary"]
 position = Vector2(430, 32.5)
 shape = SubResource("RectangleShape2D_eyyie")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundary"]
 position = Vector2(-420, 32.125)
 shape = SubResource("RectangleShape2D_wofhh")

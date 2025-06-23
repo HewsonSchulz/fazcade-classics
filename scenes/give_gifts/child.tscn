@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://gwj5q6csovly"]
+
+[ext_resource type="Texture2D" uid="uid://cxtdnr3cdi4jk" path="res://assets/sprites/Give Gifts Give Life.png" id="1_ciehp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlg14"]
+size = Vector2(116, 116)
+
+[node name="Child" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.983051, 0.983051)
+texture = ExtResource("1_ciehp")
+region_enabled = true
+region_rect = Rect2(126, 334, 118, 118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tlg14")
