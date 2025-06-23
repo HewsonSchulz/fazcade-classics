@@ -4,12 +4,17 @@ extends Node
 @onready var num10 = $AnimatedSprite10
 @onready var num100 = $AnimatedSprite100
 @onready var num1000 = $AnimatedSprite1000
+@onready var puppet = %Puppet
 var score: int = 0
 
 func increment(inc = 100):
 	score += inc
 	score = clamp(score, 0, 9999) # max score of 9999
 	refresh_display()
+	
+	# modify puppet speed
+	if score > 400:
+		puppet.speed -= 0.1
 
 func refresh_display():
 	var score_str := str(score).pad_zeros(4)

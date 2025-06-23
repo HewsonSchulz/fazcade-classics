@@ -269,6 +269,7 @@ position = Vector2(-420, 32.125)
 shape = SubResource("RectangleShape2D_wofhh")
 
 [node name="Puppet" parent="." instance=ExtResource("3_waf3e")]
+unique_name_in_owner = true
 position = Vector2(7, 78)
 
 [node name="Children" type="Node" parent="."]
