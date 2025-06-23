@@ -1,13 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://gwj5q6csovly"]
+[gd_scene load_steps=5 format=3 uid="uid://gwj5q6csovly"]
 
+[ext_resource type="Shader" path="res://shaders/chroma_key.gdshader" id="1_31fp1"]
 [ext_resource type="Texture2D" uid="uid://cxtdnr3cdi4jk" path="res://assets/sprites/Give Gifts Give Life.png" id="1_ciehp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xru3l"]
+shader = ExtResource("1_31fp1")
+shader_parameter/transparent_color = Color(0, 0, 0, 1)
+shader_parameter/tolerance = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlg14"]
 size = Vector2(116, 116)
 
 [node name="Child" type="Area2D"]
+material = SubResource("ShaderMaterial_xru3l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
 scale = Vector2(0.983051, 0.983051)
 texture = ExtResource("1_ciehp")
 region_enabled = true
