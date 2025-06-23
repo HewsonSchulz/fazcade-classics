@@ -1,13 +1,127 @@
-[gd_scene load_steps=14 format=3 uid="uid://8dk13aq2d071"]
+[gd_scene load_steps=33 format=3 uid="uid://8dk13aq2d071"]
 
 [ext_resource type="Script" uid="uid://by1kwct7cfaty" path="res://scripts/utils.gd" id="1_fvgxj"]
 [ext_resource type="Texture2D" uid="uid://bcmteik2704rd" path="res://assets/sprites/Give Gifts map.webp" id="1_ylcfl"]
 [ext_resource type="Texture2D" uid="uid://dul4lanluoku5" path="res://assets/sprites/Give Gifts border.png" id="2_cy0bm"]
+[ext_resource type="Script" uid="uid://cu0q0emwwuqh2" path="res://scripts/score.gd" id="2_jtaam"]
+[ext_resource type="Shader" uid="uid://c0dmkjb6wtuto" path="res://shaders/chroma_key.gdshader" id="3_m0u2t"]
 [ext_resource type="PackedScene" uid="uid://cjtnb5xjq3tx1" path="res://scenes/give_gifts/puppet.tscn" id="3_waf3e"]
 [ext_resource type="Shader" uid="uid://lhght7q7kecy" path="res://shaders/chroma_key_text.gdshader" id="4_fvgxj"]
+[ext_resource type="Texture2D" uid="uid://wwpie310xc8g" path="res://assets/sprites/Font.png" id="4_kt3j6"]
 [ext_resource type="Texture2D" uid="uid://cxtdnr3cdi4jk" path="res://assets/sprites/Give Gifts Give Life.png" id="4_n3idn"]
 [ext_resource type="PackedScene" uid="uid://gwj5q6csovly" path="res://scenes/give_gifts/child.tscn" id="5_gusev"]
 [ext_resource type="PackedScene" uid="uid://c6cr1jfygi1cb" path="res://scenes/give_gifts/gift.tscn" id="6_gkwx7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3u7m8"]
+shader = ExtResource("3_m0u2t")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/tolerance = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hehu"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(1, 219, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ufaf"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(61, 219, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1vlw"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(121, 219, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltp43"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(181, 219, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh1yu"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(241, 219, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvl3e"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(301, 219, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akpfg"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(361, 219, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7scfr"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(1, 297, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xdyq"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(61, 297, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4tb3"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(121, 297, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb4wd"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(181, 297, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab2d0"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(241, 297, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32n1s"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(301, 297, 59, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgaix"]
+atlas = ExtResource("4_kt3j6")
+region = Rect2(361, 297, 59, 77)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jtaam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hehu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ufaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1vlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltp43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh1yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvl3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akpfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7scfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xdyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4tb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xb4wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab2d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32n1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgaix")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n3idn"]
 shader = ExtResource("4_fvgxj")
@@ -26,6 +140,34 @@ size = Vector2(32, 625.75)
 
 [node name="GiveGifts" type="Node2D"]
 script = ExtResource("1_fvgxj")
+
+[node name="Score" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_jtaam")
+
+[node name="AnimatedSprite1000" type="AnimatedSprite2D" parent="Score"]
+material = SubResource("ShaderMaterial_3u7m8")
+position = Vector2(-404, -319)
+scale = Vector2(0.984, 0.973)
+sprite_frames = SubResource("SpriteFrames_jtaam")
+
+[node name="AnimatedSprite100" type="AnimatedSprite2D" parent="Score"]
+material = SubResource("ShaderMaterial_3u7m8")
+position = Vector2(-337, -319)
+scale = Vector2(0.984, 0.973)
+sprite_frames = SubResource("SpriteFrames_jtaam")
+
+[node name="AnimatedSprite10" type="AnimatedSprite2D" parent="Score"]
+material = SubResource("ShaderMaterial_3u7m8")
+position = Vector2(-269, -319)
+scale = Vector2(0.984, 0.973)
+sprite_frames = SubResource("SpriteFrames_jtaam")
+
+[node name="AnimatedSprite1" type="AnimatedSprite2D" parent="Score"]
+material = SubResource("ShaderMaterial_3u7m8")
+position = Vector2(-201, -319)
+scale = Vector2(0.984, 0.973)
+sprite_frames = SubResource("SpriteFrames_jtaam")
 
 [node name="Background1" type="Sprite2D" parent="."]
 scale = Vector2(12, 6.522)
