@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c31merkwdfr68"
+path="res://.godot/imported/call 3b.wav-668d5aa0ffc542353d4bccc206b59ba5.sample"
+
+[deps]
+
+source_file="res://assets/audio/call 3b.wav"
+dest_files=["res://.godot/imported/call 3b.wav-668d5aa0ffc542353d4bccc206b59ba5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
