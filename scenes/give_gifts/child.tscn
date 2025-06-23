@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://gwj5q6csovly"]
 
-[ext_resource type="Shader" path="res://shaders/chroma_key.gdshader" id="1_31fp1"]
+[ext_resource type="Shader" uid="uid://c0dmkjb6wtuto" path="res://shaders/chroma_key.gdshader" id="1_31fp1"]
 [ext_resource type="Texture2D" uid="uid://cxtdnr3cdi4jk" path="res://assets/sprites/Give Gifts Give Life.png" id="1_ciehp"]
-[ext_resource type="Script" path="res://scripts/child.gd" id="2_g5jnc"]
+[ext_resource type="Script" uid="uid://bnot836gy8xyw" path="res://scripts/child.gd" id="2_g5jnc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xru3l"]
 shader = ExtResource("1_31fp1")

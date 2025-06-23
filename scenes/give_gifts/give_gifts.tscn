@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://8dk13aq2d071"]
 
-[ext_resource type="Script" path="res://scripts/esc_quit.gd" id="1_7kheo"]
+[ext_resource type="Script" uid="uid://by1kwct7cfaty" path="res://scripts/esc_quit.gd" id="1_7kheo"]
 [ext_resource type="Texture2D" uid="uid://bcmteik2704rd" path="res://assets/sprites/Give Gifts map.webp" id="1_ylcfl"]
 [ext_resource type="Texture2D" uid="uid://dul4lanluoku5" path="res://assets/sprites/Give Gifts border.png" id="2_cy0bm"]
 [ext_resource type="PackedScene" uid="uid://cjtnb5xjq3tx1" path="res://scenes/give_gifts/puppet.tscn" id="3_waf3e"]

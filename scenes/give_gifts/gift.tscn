@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6cr1jfygi1cb"]
 
-[ext_resource type="Shader" path="res://shaders/chroma_key.gdshader" id="1_ijvhg"]
+[ext_resource type="Shader" uid="uid://c0dmkjb6wtuto" path="res://shaders/chroma_key.gdshader" id="1_ijvhg"]
 [ext_resource type="Texture2D" uid="uid://cxtdnr3cdi4jk" path="res://assets/sprites/Give Gifts Give Life.png" id="2_62kv2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ol2x"]

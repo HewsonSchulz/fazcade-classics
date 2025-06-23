@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cjtnb5xjq3tx1"]
 
-[ext_resource type="Script" path="res://scripts/puppet.gd" id="1_ton16"]
+[ext_resource type="Script" uid="uid://cbn44vxs0prbw" path="res://scripts/puppet.gd" id="1_ton16"]
 [ext_resource type="Texture2D" uid="uid://cxtdnr3cdi4jk" path="res://assets/sprites/Give Gifts Give Life.png" id="1_y621n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwf0g"]
