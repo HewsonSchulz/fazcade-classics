@@ -30,11 +30,15 @@ func increment(inc = 100):
 	else:
 		# end game
 		crying_child.get_node("Sprite2D").visible = true
+		jumpscare.get_node("JumpscareSound").play()
 		
 		await get_tree().create_timer(0.05).timeout
 		
 		jumpscare.visible = true
 		jumpscare.play()
+		
+		await get_tree().create_timer(0.6).timeout
+		get_tree().quit() #! quit game
 
 func refresh_display():
 	var score_str := str(score).pad_zeros(4)

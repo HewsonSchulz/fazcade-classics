@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://8dk13aq2d071"]
+[gd_scene load_steps=62 format=3 uid="uid://8dk13aq2d071"]
 
 [ext_resource type="Script" uid="uid://by1kwct7cfaty" path="res://scripts/utils.gd" id="1_fvgxj"]
 [ext_resource type="Texture2D" uid="uid://bcmteik2704rd" path="res://assets/sprites/Give Gifts map.webp" id="1_ylcfl"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://diwonhlnkud51" path="res://assets/sprites/Give Gifts map2.png" id="7_kt3j6"]
 [ext_resource type="Script" uid="uid://e36rc1thl4mp" path="res://scripts/crying_child.gd" id="13_3u7m8"]
 [ext_resource type="Texture2D" uid="uid://qydswdjenyjp" path="res://assets/sprites/Withered Golden Freddy.png" id="14_2hehu"]
+[ext_resource type="AudioStream" uid="uid://be5ugpmucchxm" path="res://assets/audio/Xscream2.wav" id="17_ltp43"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3u7m8"]
 shader = ExtResource("3_m0u2t")
@@ -198,7 +199,7 @@ shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/tolerance = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kt3j6"]
-size = Vector2(200, 200)
+size = Vector2(260, 260)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ee8ps"]
 atlas = ExtResource("14_2hehu")
@@ -294,7 +295,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_poftp")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 20.0
 }]
@@ -382,6 +383,7 @@ shape = SubResource("RectangleShape2D_wofhh")
 [node name="Puppet" parent="." instance=ExtResource("3_waf3e")]
 unique_name_in_owner = true
 position = Vector2(7, 78)
+speed = 1.0
 
 [node name="Children" type="Node" parent="."]
 
@@ -483,5 +485,8 @@ unique_name_in_owner = true
 visible = false
 top_level = true
 sprite_frames = SubResource("SpriteFrames_nch46")
+
+[node name="JumpscareSound" type="AudioStreamPlayer2D" parent="Jumpscare"]
+stream = ExtResource("17_ltp43")
 
 [connection signal="body_entered" from="CryingChild" to="CryingChild" method="_on_body_entered"]
