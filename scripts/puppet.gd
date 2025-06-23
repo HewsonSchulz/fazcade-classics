@@ -27,7 +27,10 @@ func _physics_process(delta):
 
 		if input_vector != Vector2.ZERO:
 			input_vector = input_vector.normalized().snapped(Vector2.ONE)
-			global_position += input_vector * STEP_SIZE
+			var motion = input_vector * STEP_SIZE
+
+			#? if not test_move(global_transform, motion): # if movement will not result in collision
+			move_and_collide(motion)
 			move_timer = get_move_delay()
 			ready_to_move = false
 
