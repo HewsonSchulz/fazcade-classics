@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://8dk13aq2d071"]
 
-[ext_resource type="Script" uid="uid://by1kwct7cfaty" path="res://scripts/esc_quit.gd" id="1_7kheo"]
+[ext_resource type="Script" uid="uid://by1kwct7cfaty" path="res://scripts/utils.gd" id="1_fvgxj"]
 [ext_resource type="Texture2D" uid="uid://bcmteik2704rd" path="res://assets/sprites/Give Gifts map.webp" id="1_ylcfl"]
 [ext_resource type="Texture2D" uid="uid://dul4lanluoku5" path="res://assets/sprites/Give Gifts border.png" id="2_cy0bm"]
 [ext_resource type="PackedScene" uid="uid://cjtnb5xjq3tx1" path="res://scenes/give_gifts/puppet.tscn" id="3_waf3e"]
@@ -25,7 +25,7 @@ size = Vector2(32, 627)
 size = Vector2(32, 625.75)
 
 [node name="GiveGifts" type="Node2D"]
-script = ExtResource("1_7kheo")
+script = ExtResource("1_fvgxj")
 
 [node name="Background1" type="Sprite2D" parent="."]
 scale = Vector2(12, 6.522)
@@ -72,34 +72,38 @@ shape = SubResource("RectangleShape2D_wofhh")
 [node name="Puppet" parent="." instance=ExtResource("3_waf3e")]
 position = Vector2(7, 78)
 
-[node name="Child" parent="." instance=ExtResource("5_gusev")]
+[node name="Children" type="Node" parent="."]
+
+[node name="Child" parent="Children" instance=ExtResource("5_gusev")]
 position = Vector2(-277, -142)
-gift_node = NodePath("../Gift")
+gift_node = NodePath("../../Gifts/Gift")
 
-[node name="Child2" parent="." instance=ExtResource("5_gusev")]
+[node name="Child2" parent="Children" instance=ExtResource("5_gusev")]
 position = Vector2(310, -142)
-gift_node = NodePath("../Gift2")
+gift_node = NodePath("../../Gifts/Gift2")
 
-[node name="Child3" parent="." instance=ExtResource("5_gusev")]
+[node name="Child3" parent="Children" instance=ExtResource("5_gusev")]
 position = Vector2(311, 233)
-gift_node = NodePath("../Gift3")
+gift_node = NodePath("../../Gifts/Gift3")
 
-[node name="Child4" parent="." instance=ExtResource("5_gusev")]
+[node name="Child4" parent="Children" instance=ExtResource("5_gusev")]
 position = Vector2(-301, 245)
-gift_node = NodePath("../Gift4")
+gift_node = NodePath("../../Gifts/Gift4")
 
-[node name="Gift" parent="." instance=ExtResource("6_gkwx7")]
+[node name="Gifts" type="Node" parent="."]
+
+[node name="Gift" parent="Gifts" instance=ExtResource("6_gkwx7")]
 visible = false
 position = Vector2(-132, -123)
 
-[node name="Gift2" parent="." instance=ExtResource("6_gkwx7")]
+[node name="Gift2" parent="Gifts" instance=ExtResource("6_gkwx7")]
 visible = false
 position = Vector2(146, -149)
 
-[node name="Gift3" parent="." instance=ExtResource("6_gkwx7")]
+[node name="Gift3" parent="Gifts" instance=ExtResource("6_gkwx7")]
 visible = false
 position = Vector2(140, 223)
 
-[node name="Gift4" parent="." instance=ExtResource("6_gkwx7")]
+[node name="Gift4" parent="Gifts" instance=ExtResource("6_gkwx7")]
 visible = false
 position = Vector2(-158, 232)

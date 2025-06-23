@@ -27,15 +27,26 @@ func _physics_process(delta):
 
 		if input_vector != Vector2.ZERO:
 			input_vector = input_vector.normalized().snapped(Vector2.ONE)
-			var motion = input_vector * STEP_SIZE
 
-			#? if not test_move(global_transform, motion): # if movement will not result in collision
-			move_and_collide(motion)
-			move_timer = get_move_delay()
-			ready_to_move = false
+			var full_motion = input_vector * STEP_SIZE
+			var horizontal_motion = Vector2(input_vector.x, 0) * STEP_SIZE
+			var vertical_motion = Vector2(0, input_vector.y) * STEP_SIZE
 
-			# face current direction
-			if input_vector.x > 0:
-				sprite.frame = 0
-			elif input_vector.x < 0:
-				sprite.frame = 1
+			var moved = false
+
+			if move_and_collide(full_motion) == null:
+				moved = true
+			elif input_vector.x != 0 and move_and_collide(horizontal_motion) == null:
+				moved = true
+			elif input_vector.y != 0 and move_and_collide(vertical_motion) == null:
+				moved = true
+
+			if moved:
+				move_timer = get_move_delay()
+				ready_to_move = false
+
+				# face current direction
+				if input_vector.x > 0:
+					sprite.frame = 0
+				elif input_vector.x < 0:
+					sprite.frame = 1
