@@ -1,0 +1,120 @@
+[gd_scene load_steps=16 format=3 uid="uid://c0to1mx5m13qj"]
+
+[ext_resource type="Script" uid="uid://bu4w4r3nyxfy7" path="res://scripts/crt_overlay.gd" id="1_e3o75"]
+[ext_resource type="Texture2D" uid="uid://cmkguirars5ks" path="res://assets/sprites/Minigame Overlay.png" id="1_v6ixi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk21j"]
+atlas = ExtResource("1_v6ixi")
+region = Rect2(1, 770, 1024, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snkl5"]
+atlas = ExtResource("1_v6ixi")
+region = Rect2(1026, 770, 1024, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3exx"]
+atlas = ExtResource("1_v6ixi")
+region = Rect2(2051, 770, 1024, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u62v0"]
+atlas = ExtResource("1_v6ixi")
+region = Rect2(3076, 770, 1024, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftulo"]
+atlas = ExtResource("1_v6ixi")
+region = Rect2(4101, 770, 1024, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhlp4"]
+atlas = ExtResource("1_v6ixi")
+region = Rect2(5126, 770, 1024, 768)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8g40n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk21j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snkl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3exx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u62v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftulo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhlp4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6ixi"]
+atlas = ExtResource("1_v6ixi")
+region = Rect2(1, 1, 1024, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3o75"]
+atlas = ExtResource("1_v6ixi")
+region = Rect2(1026, 1, 1024, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y0x8"]
+atlas = ExtResource("1_v6ixi")
+region = Rect2(2051, 1, 1024, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o330p"]
+atlas = ExtResource("1_v6ixi")
+region = Rect2(3076, 1, 1024, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ug3n"]
+atlas = ExtResource("1_v6ixi")
+region = Rect2(4101, 1, 1024, 768)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6ixi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6ixi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3o75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y0x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o330p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ug3n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CRTOverlay" type="Node2D"]
+script = ExtResource("1_e3o75")
+
+[node name="Static" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+sprite_frames = SubResource("SpriteFrames_8g40n")
+
+[node name="WhiteLines" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+sprite_frames = SubResource("SpriteFrames_v6ixi")
+frame = 2
+
+[node name="WhiteLines2" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(1, 1.5)
+sprite_frames = SubResource("SpriteFrames_v6ixi")
+frame = 2
+
+[node name="BlackBars" type="Sprite2D" parent="."]
+texture = ExtResource("1_v6ixi")
+region_enabled = true
+region_rect = Rect2(5126, 1, 1024, 768)

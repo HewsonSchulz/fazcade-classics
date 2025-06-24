@@ -1,10 +1,11 @@
-[gd_scene load_steps=62 format=3 uid="uid://8dk13aq2d071"]
+[gd_scene load_steps=63 format=3 uid="uid://8dk13aq2d071"]
 
 [ext_resource type="Script" uid="uid://by1kwct7cfaty" path="res://scripts/utils.gd" id="1_fvgxj"]
 [ext_resource type="Texture2D" uid="uid://bcmteik2704rd" path="res://assets/sprites/Give Gifts map.webp" id="1_ylcfl"]
 [ext_resource type="AudioStream" uid="uid://by8wkaonfhaw8" path="res://assets/audio/staticend2.wav" id="2_5ufaf"]
 [ext_resource type="Texture2D" uid="uid://dul4lanluoku5" path="res://assets/sprites/Give Gifts border.png" id="2_cy0bm"]
 [ext_resource type="Script" uid="uid://cu0q0emwwuqh2" path="res://scripts/score.gd" id="2_jtaam"]
+[ext_resource type="PackedScene" uid="uid://c0to1mx5m13qj" path="res://scenes/crt_overlay.tscn" id="2_mh1yu"]
 [ext_resource type="Shader" uid="uid://c0dmkjb6wtuto" path="res://shaders/chroma_key.gdshader" id="3_m0u2t"]
 [ext_resource type="AudioStream" uid="uid://ns4jquah2dct" path="res://assets/audio/cake2.wav" id="3_t1vlw"]
 [ext_resource type="PackedScene" uid="uid://cjtnb5xjq3tx1" path="res://scenes/give_gifts/puppet.tscn" id="3_waf3e"]
@@ -478,6 +479,10 @@ region_rect = Rect2(126, 334, 118, 118)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CryingChild"]
 shape = SubResource("RectangleShape2D_kt3j6")
+
+[node name="CRTOverlay" parent="." instance=ExtResource("2_mh1yu")]
+top_level = true
+scale = Vector2(0.98, 0.98)
 
 [node name="Jumpscare" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
